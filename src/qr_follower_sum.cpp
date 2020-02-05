@@ -60,7 +60,7 @@ namespace QR_follower {
 
 
 
-        /*
+                /*
 		Publishs to cmd_vel to move powerbot to QRcode (Define controller)
 		*/
 
