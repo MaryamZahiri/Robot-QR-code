@@ -1,8 +1,6 @@
 # Powerbot-QR-code-follower
-Development of Human-tracking Robot using the QR Code recognition in Linux environment. (ROS-based processes)
+Development of Human-tracking Robot using the QR Code recognition in Linux environment. As a result, Powerbot detects the QR code and follow it. (ROS-based processes)
 
-# powerbot_qr_follower
-Powerbot detects the QR code and follow it
 # Setup
 
   - Charge Powerbot
