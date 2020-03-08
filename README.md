@@ -6,8 +6,7 @@ Development of Human-tracking Robot using the QR Code recognition in Linux envir
   - Charge robot
   - Turn on NUC or the computer which is conected to the robot
   - Connect laptop to wi-fi
-  - Make sure you connect the usb camera to the NUC or the computer which is connected to the robot
-
+  - Make sure you connect the usb camera to the NUC or the computer
 # Terminal 1: PS3 Controller
 
 - Connect to NUC/computer with GUI: "ssh -X {user}@{host}". (Password in magic equation.)
@@ -22,21 +21,21 @@ Development of Human-tracking Robot using the QR Code recognition in Linux envir
 
 # Terminal 3: QR code detection
 
-- Connect to NUC with GUI: "ssh -X {user}@{host}". (Password in magic equation.)
+- Connect to NUC or the computer with GUI: "ssh -X {user}@{host}". (Password in magic equation.)
    - "roslaunch visp_auto_tracker tracklive_usb.launch"
 
 # Terminal 4: QR code detection topic
-- Connect to NUC with GUI: "ssh -X {user}@{host}". (Password in magic equation.)
+- Connect to NUC or the computer with GUI: "ssh -X {user}@{host}". (Password in magic equation.)
   - "rostopic echo /visp_auto/object_position" 
 
 # Terminal 5: Following QR code
-- Connect to NUC with GUI: "ssh -X {user}@{host}". (Password in magic equation.)
+- Connect to NUC or the computer with GUI: "ssh -X {user}@{host}". (Password in magic equation.)
   - "roscd qr_test" 
   - "roscd src" 
   - "rosrun qr_test qr_test_node qr_following"
 
 # Terminal 6: connect with ros master
-- Connect to NUC with GUI: "ssh -X {user}@{host}". (Password in magic equation.)
+- Connect to NUC or the computer with GUI: "ssh -X {user}@{host}". (Password in magic equation.)
   - "roscore"
 
 
