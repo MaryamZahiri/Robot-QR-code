@@ -7,6 +7,7 @@ A mobile robot that was used in this package
 
 # QR code
 Print the QR code that will be mounted on your leader (it can be an object or human or another robot)
+
 ![QR](https://user-images.githubusercontent.com/52676399/96355022-265f9500-1092-11eb-9b0a-a521e5e7aacb.png)
 
 # Setup
@@ -26,6 +27,7 @@ Print the QR code that will be mounted on your leader (it can be an object or hu
 # Terminal 2: Robot Nav (To control the Robot, we can do as follows)
 - Connect to NUC with GUI: "ssh -X {user}@{host}". (Password in magic equation.)
    - roslaunch powerbot_nav powerbot_nav.launch
+   
    ![final-joystick](https://user-images.githubusercontent.com/52676399/96355606-45f9bc00-1098-11eb-92c0-623207f442c6.gif)
    
 # Terminal 3: QR code detection
