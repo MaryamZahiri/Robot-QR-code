@@ -26,6 +26,8 @@ A mobile robot that was used in this package
 
 - Connect to NUC or the computer with GUI: "ssh -X {user}@{host}". (Password in magic equation.)
    - "roslaunch visp_auto_tracker tracklive_usb.launch"
+- As a result, you can detect the QR code
+   ![Screenshot from 2019-10-25 14-54-40](https://user-images.githubusercontent.com/52676399/96354574-f5309600-108c-11eb-94d0-b2bf3ab42636.png)
 
 # Terminal 4: QR code detection topic
 - Connect to NUC or the computer with GUI: "ssh -X {user}@{host}". (Password in magic equation.)
