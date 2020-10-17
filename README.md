@@ -3,6 +3,11 @@ Development of Human-tracking Robot using the QR Code recognition in Linux envir
 
 # Powerbot
 A mobile robot that was used in this package
+![powerbot](https://user-images.githubusercontent.com/52676399/96354974-873a9d80-1091-11eb-9500-97500261e16f.jpg)
+
+# QR code
+Print the QR code that will be mounted on your leader (it can be an object or human or another robot)
+![QR](https://user-images.githubusercontent.com/52676399/96355022-265f9500-1092-11eb-9b0a-a521e5e7aacb.png)
 
 # Setup
 
@@ -21,18 +26,21 @@ A mobile robot that was used in this package
 # Terminal 2: Robot Nav (To control the Robot, we can do as follows)
 - Connect to NUC with GUI: "ssh -X {user}@{host}". (Password in magic equation.)
    - roslaunch powerbot_nav powerbot_nav.launch
-
+   ![final-joystick](https://user-images.githubusercontent.com/52676399/96355606-45f9bc00-1098-11eb-92c0-623207f442c6.gif)
+   
 # Terminal 3: QR code detection
 
 - Connect to NUC or the computer with GUI: "ssh -X {user}@{host}". (Password in magic equation.)
    - "roslaunch visp_auto_tracker tracklive_usb.launch"
 - As a result, you can detect the QR code
-   ![Screenshot from 2019-10-25 14-54-40](https://user-images.githubusercontent.com/52676399/96354674-22317880-108e-11eb-9a53-bd5b8efc5054.png?size=small)
+   ![QR-detection](https://user-images.githubusercontent.com/52676399/96354978-96b9e680-1091-11eb-954f-f3aae5fa1bb1.png)
 
 # Terminal 4: QR code detection topic
 - Connect to NUC or the computer with GUI: "ssh -X {user}@{host}". (Password in magic equation.)
   - "rostopic echo /visp_auto/object_position" 
-
+- As a result, you can detect position of the QR code
+   ![QR-position-detection](https://user-images.githubusercontent.com/52676399/96355009-0d56e400-1092-11eb-84ea-ad05e349b885.png)
+   
 # Terminal 5: Following QR code
 - Connect to NUC or the computer with GUI: "ssh -X {user}@{host}". (Password in magic equation.)
   - "roscd qr_test" 
