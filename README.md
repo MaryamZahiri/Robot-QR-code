@@ -1,4 +1,4 @@
-# Robot-QR-code-follower
+# Robot-QR-code
 Development of Human-tracking Robot using the QR Code recognition in Linux environment. As a result, Robot detects the QR code and follow it. (ROS-based processes)
 
 # Powerbot
