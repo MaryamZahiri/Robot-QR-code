@@ -6,7 +6,7 @@ A mobile robot that was used in this package.
 
 # QR code
 Print the QR code that will be mounted on your leader (it can be an object or human or another robot)
-This is an example of a valid QR-code pattern that can be downloaded from [ROS Wiki](http://wiki.ros.org/visp_auto_tracker) or scan the below QR code
+This is an example of a valid QR-code pattern that can be downloaded from [ROS Wiki](http://wiki.ros.org/visp_auto_tracker) or scanning the below QR code
 
 ![frame](https://user-images.githubusercontent.com/52676399/96356460-a3dfd100-10a3-11eb-8b1e-1b993a205f68.png)
 
