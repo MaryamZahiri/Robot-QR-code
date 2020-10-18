@@ -3,7 +3,6 @@ Development of Human-tracking Robot using the QR Code recognition in Linux envir
 
 # Powerbot
 A mobile robot that was used in this package
-![powerbot](https://user-images.githubusercontent.com/52676399/96354974-873a9d80-1091-11eb-9500-97500261e16f.jpg)
 
 # QR code
 Print the QR code that will be mounted on your leader (it can be an object or human or another robot)
