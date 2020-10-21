@@ -58,7 +58,7 @@ $ username@IP Address: ~/ws/src/powerboat_nav/rviz$ git checkout -b Maryam
  //create a new branch (-b)
 username@IP Address: ~/catkin_ws/src/powerboat_nav/rviz$ git status 
  //which branch
-username@IP Address: ~/catkin_ws/src/powerboat_nav/rviz$ git checkout 2019PADemo-lcs 
+username@IP Address: ~/catkin_ws/src/powerboat_nav/rviz$ git checkout Maryam 
  //switch to another branch
 username@IP Address: ~/catkin_ws/src/powerboat_nav/rviz$ git status
  //which branch
