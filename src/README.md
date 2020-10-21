@@ -80,10 +80,8 @@ $ :q
 ```
 $ roscd powerboat_nav/maps
  //go to folder;
- // wrong: roscd catkin_ws/src/powerboat_nav/launch
-ls //shows what is included in the folder: 
-   //like the map folder, 
-   //icics_x_wing_F0.yaml (caris lab) or x209_20180926.yaml 
+ls 
+ //shows what is included in the folder
 $ roslaunch powerbot_nav powerbot_nav.launch map:= x209_20180926.yaml //error
 ```
 ```
@@ -251,7 +249,7 @@ $ scp -r root@IP:/path/to/file /path/to/filedestination
 ```
 ```
 right solution:
-$ username@IP Address:~$ scp -r /home/caris/catkin_ws/src/vision_visp username@IP Address:/home/nuc/catkin_ws/src
+$ username@IP Address:~$ scp -r /home/lab/catkin_ws/src/vision_visp username@IP Address:/home/nuc/catkin_ws/src
 ```
  
 Internet Connection Problem in UBC 
@@ -523,7 +521,7 @@ $ roscat powerbot_nav powerbot_nav_with_people_tracker.launch
 $ roscat powerbot_nav cmd_vel_mux.yaml
 //right way
 $ cd sidewalk_navigation/simulation/simulation_ros_catkin_ws/src/pm_robot/launch
-$ cat powerbot_ubc_caris.launch
+$ cat powerbot_ubc_lab.launch
 //write node: subscribe topic QR code 
 //Transfer frame camera to the world
 ```
