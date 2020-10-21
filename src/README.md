@@ -68,7 +68,7 @@ username@IP Address: ~/catkin_ws/src/powerboat_nav/rviz$ rosrun rviz rviz -d pow
 ```
 In nuc, edit info in package (like map)
 information about “yaml”, configuration parameters, cmd_vel (is sent by multiplexer, another computer inside the powerboat instead of nuc, run the ROSARIA) which we can change:
-Note: Joysteak (10)>move_base (1): means priority with Joysteak.
+**Note: Joysteak (10)>move_base (1): means priority with Joysteak.
 ```
 $ rosed powerbot_nav powerbot_nav.launch
  //edit and see info (find info in part of map)
@@ -100,7 +100,7 @@ $ username@IP Address: ~/catkin_ws/src/powerboat_nav/map$ git diff
 $ roslaunch powerbot_nav powerbot_nav.launch
  //then run the launch to see the new map
 ```
-Note: There are 2 errors in red color when we run launch. Because we don’t use them. 1. Joystick, 2. Realsense
+**Note: There are 2 errors in red color when we run launch. Because we don’t use them. 1. Joystick, 2. Realsense
 ```
 $ username@IP Address:~ rqt_graph
  //give node and topic connection.
@@ -302,49 +302,70 @@ Another package:
 3. restart it again. Sometimes it is because of connection to master ros.
  Open new terminal
  Write capital x “-X” in “ssh -X username@IP Address”
+```
 $ Rosrun rviz rviz -d tracking_right_realsense_link_nav.rviz
 .
 .
+```
 Error: Couldn’t connect to display
 Clean ros log
+```
 $ rosclean purge
+```
 
 A QR code tracking package for  (1 try- ros_qr_tracker) 
 Install dependencies:
+```
 $ sudo apt-get install libffi-dev libffi6 libzbar-dev python-catkin-pkg
 $ pip install libzbar-cffi 
  //wrong way
+```
 [Errno 13] Permission denied: '/usr/local/bin/pip'
 Solution:
+```
 $ pip install --user <package you want to install> 
+```
 So:
+```
 $  pip install --user libzbar-cffi 
+```
 Overlaying with a catkin Workspace
 1) by creating a folder (directory) to hold the new workspace and prepare the src folder, which will store the urls and versions of sources you download
+```
 $  mkdir -p overlay_ws/src
 $  cd overlay_ws/src 
+```
 2) Adding Packages to Your catkin Workspace. add a ros package from source to your src folder.
 Create symlink “/home/nuc/overlay_ws/src/CMakeLists.txt”…
+```
 $  catkin_init_workspace 
  //create CMakeLists.txt in /overlay_ws/scr
 $ git clone https://github.com/chrisspen/ros_qr_tracker.git 
  //download and create ros_qr_tracker 
+```
 3) Building Your catkin Workspace
-// wrong way:
+```
+wrong way:
 $ cd ..
 $ catkin_make --pkg ros_qr_tracker 
+```
 error: socket.error connection refused
+```
 Path: username@IP Address: ~/overlay_ws/src/ros_qr_tracker
+```
 
 error: no package
 solution: ## THIS IS THE CRUCIAL PART FOR OVERLAYING
+```
 $ source ~/overlay_ws/devel/setup.bash
 cd ..
 catkin_make –pkg ros_qr_tracker
+```
 Running QR package by me in overlay_ws
 First running demo packages
 Find ros package
 First, we should run demo to see which topics is used. Then used in our new package.
+```
 $ rostopic list | grep rgb
 .
 .
@@ -380,13 +401,14 @@ $ rosrun ros_qr_tracker qr_tracker.py _topic:=/right_realsense/rgb/imge_raw
 In another terminal
 $ rosservice call /qr_tracker/start
  //Error subscriber and publisher
+```
 
 Overlay_ws instead of catkin_ws
+```
 $ vi .bashrc
 Add #source /home/nuc/overlay_ws/devel/setup.bash
-Reference
-https://github.com/pypa/pip/issues/4186
-http://wiki.ros.org/catkin/Tutorials/workspace_overlaying
+```
+
 QR code 
 Visp_auto_tracker cannot open model file #42
 ERROR: 
@@ -395,21 +417,25 @@ ERROR: cannot launch node of type [visp_tracker/visp_tracker_client]: can't loca
 ERROR: cannot launch node of type [visp_tracker/visp_tracker_viewer]: can't locate node [visp_tracker_viewer] in package [visp_tracker]
 Solution: 
 The best is to remove all ros-hydro-visp* packages, and then install the packages from source. For visp auto tracker (you can use the master branch)
+```
 $ cd ~/catkin_ws/src
 $ cd ~/catkin_ws/src
 $ git clone https://github.com/lagadic/vision_visp.git
 $ cd ..
 $ catkin_make --pkg visp_auto_tracker
 $ source devel/setup.bash
-
+```
+```
 $ cd catkin_ws/src/vision_visp/visp_auto_tracker/launch$ roslaunch visp_auto_tracker tracklive_usb.launch
-
+```
 Error:
 cannot launch node of type [usb_cam/usb_cam_node]: usb_cam
 ROS path …
 Solution:
+```
 $ rospack find usb_cam
-
+```
+```
 $ cd catkin_ws/src
 $ catkin_init_workspace
 $ firefox
@@ -420,22 +446,26 @@ $ cd ..
 $ catkin_make -pkg usb_cam
 $ cd src
 $ source ~/catkin_ws/devel/setup.bash
+```
 Configuration for usb_cam:
+```
 $ cd holobot_ros/launch
 $ cat track_robot.launch
-
+```
 Error: 
 cannot launch node of type [usb_cam/usb_cam_node]: usb_cam
 https://github.com/lagadic/vision_visp/issues/42
-Nick guidelines
+Guidelines
 Read: readme (git status, git checkout kinetic or master)
 Read: cat cmake.txt! (distribution!!)
 Errors:
 Couldn’t install from the source. So, it can be just updated and then be installed based on the website.
 For workspace existed on nuc (catkin
 _ws) instead of 
-$ catkin_make --pkg “”  catkin build “”
-
+```
+$ catkin_make --pkg “” catkin build “”
+```
+```
 $ rospack list | grep visp 
   // search
 $ rosnode list
@@ -443,10 +473,11 @@ $ rostopic list
 $ roslaunch visp_auto_tracker tracklive_usb.launch
 $ rostopic info /visp_auto/object_position
 $ rostopic echo /visp_auto/object_position 
-
+```
 1. Config file
 2. Try which topic and measure and try again
 3. check packages and files
+```
 $ roscd visp_auto_tracker
  //find the package
 $ cd launch
@@ -454,16 +485,18 @@ $ cat tracklive_usb.launch
  //change this part if I want to use realsense
  //remap from=”name of package/topic” to=”…”
  //remap from=”visp_auto_tracker/camera_info” to=“/usb_cam/camera_info” 
-
+```
+```
 $ roscd person_follower
 $ cat /launch/person_follower.launch
-
-// Leia
+```
+```
 $ roscd myo_gesture_controller
 $ cd scripts
 $ cat start_powerbot_person_follower_controller.sh
  //including .sh and launch and a node file
-
+```
+```
 $ rosed person_follower spencer_person_follower.py
  //search subscribe with “/subsc”
  //search /cmd_vel
@@ -471,28 +504,24 @@ $ rosed person_follower spencer_person_follower.py
  //pose stamp (header)
  //wesley and person follower detector 
  //it transfer position to nearest person to follow
-
+```
+```
 //side walk navigation and using for move_base goal
 $ roscat powerbot_nav powerbot_nav_with_people_tracker.launch
 $ roscat powerbot_nav cmd_vel_mux.yaml
 //right way
 $ cd sidewalk_navigation/simulation/simulation_ros_catkin_ws/src/pm_robot/launch
 $ cat powerbot_ubc_caris.launch
-//write node:  subscribe topic QR code 
-	Transfer frame camera to the world
-
-Dropbox
-1. Source: tutorial/raspberry
-2. We can upload all files from our nuc to the App we created in the Dropbox. 
-$ cd /home/nuc/Maryam/Dropbox-Uploader
-$ sudo ./dropbox_uploader.sh -s upload /home/nuc/sidewalk_navigation/simulation/simulation_ros_catkin_ws/src/pm_robot/src /nuc@nuc
-
-
+//write node: subscribe topic QR code 
+//Transfer frame camera to the world
+```
+```
 Lsusb (all deskonkey)
 Dmesg (last massage connected or not)
-
+```
 Find a file
+```
 Find derectory -name ‘*.h’
 find . -name ‘*.h’
 Find geometry_msgs/ -name Twist.h
-
+```
