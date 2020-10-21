@@ -1,6 +1,6 @@
 # Tutorial
 
-$ Sudo bash
+<$ Sudo bash>
 
 Internet connection on nuc
 $ username@IP Address: $ firefox
@@ -167,7 +167,7 @@ $ sudo apt-get install ros-kinetic-ar-track-alvar
 Hardware (video in launch file-I must change: video1, video 2, video3)
 $ ls /dev
 
-myo running (creating node By Nick)
+myo running (creating node)
 $ roscd (name of package)
 $ roscd myo_gesture_controller/
 $ :~/catkin_ws/src/myo_gesture_controller$ cd script
