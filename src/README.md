@@ -18,8 +18,8 @@ Custome nodes name
 $ Rosrun list # give us the list name of custom nodes
 $ Sudo bash 
 ```
-Reference
-http://wiki.ros.org/roslaunch
+Reference in [ROS Wiki](http://wiki.ros.org/roslaunch)
+
 ```
 $ Sudo bash
 ```
@@ -110,10 +110,10 @@ Nodes= line program.
 Massages are included in the topic.
 
  
-## Turtlebot
+## example of Turtlebot
 1.	Go to simulation_ws/src or catkin_ws/src
 2.	“git clone “web””
-3.	Simulation  launch file  turtle_gazebo package  main.launch
+3.	Simulation >> launch file >> turtle_gazebo package  main.launch
 4.	After running the launch file
 ```
 $ Rostopic list 
@@ -151,14 +151,20 @@ There are 3 command
 Roslaunch package launch.file
 roslaunch blob_tracking move_ball_keyboard.lauch
 ```
+![moveBall](https://user-images.githubusercontent.com/52676399/96692248-ab6cd780-133a-11eb-9bed-79054546efe8.png)
+
 3. What mira camera see
 Rviz or rosrun
 ```
 rosrun rqt_image_view rqt_image_view
 ```
-camera topic info  open graphical interface
-in simulation  select image_raw to see the position of ball
-   
+camera topic info >> open graphical interface
+in simulation >> select image_raw to see the position of ball
+
+![3 1](https://user-images.githubusercontent.com/52676399/96692335-c3445b80-133a-11eb-8fe1-b087c6048cfe.png)
+
+![3 2](https://user-images.githubusercontent.com/52676399/96692444-e40cb100-133a-11eb-8e90-98e7accb8f00.png)
+
 4. object tracking with OpenCV & python, color encoding
 ```
 roslaunch blob_tracking start_colour_gui.launch
