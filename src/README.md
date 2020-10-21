@@ -1,21 +1,28 @@
 # Tutorial
 
-<$ Sudo bash>
-
+```
+$ Sudo bash
+```
 Internet connection on nuc
+```
 $ username@IP Address: $ firefox
-
+```
 RosRun
 Launch File is an XML document and a program that launches multiple ROS Nodes.
 We can find in the launch file
+```
 $ Rosrun (name of package) (name of node)//in the launch file exactly 
+```
 Custome nodes name
+```
 $ Rosrun list # give us the list name of custom nodes
 $ Sudo bash 
+```
 Reference
 http://wiki.ros.org/roslaunch
- 
+```
 $ Sudo bash
+```
 Notes for ROS Nav-STACK Running
 Turn on powerbot and nuc and connect to wifi and ssh
 $ ping nuc
