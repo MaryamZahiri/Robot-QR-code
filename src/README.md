@@ -416,11 +416,12 @@ Add #source /home/nuc/overlay_ws/devel/setup.bash
 ```
 
 QR code 
-Visp_auto_tracker cannot open model file #42
-ERROR: 
-cannot launch node of type [visp_tracker/tracker]: can't locate node [tracker] in package [visp_tracker]
+Visp_auto_tracker cannot open model file ```#42```
+```
+ERROR: cannot launch node of type [visp_tracker/tracker]: can't locate node [tracker] in package [visp_tracker]
 ERROR: cannot launch node of type [visp_tracker/visp_tracker_client]: can't locate node [visp_tracker_client] in package [visp_tracker]
 ERROR: cannot launch node of type [visp_tracker/visp_tracker_viewer]: can't locate node [visp_tracker_viewer] in package [visp_tracker]
+```
 Solution: 
 The best is to remove all ros-hydro-visp* packages, and then install the packages from source. For visp auto tracker (you can use the master branch)
 ```
@@ -435,8 +436,10 @@ $ source devel/setup.bash
 $ cd catkin_ws/src/vision_visp/visp_auto_tracker/launch$ roslaunch visp_auto_tracker tracklive_usb.launch
 ```
 Error:
+```
 cannot launch node of type [usb_cam/usb_cam_node]: usb_cam
 ROS path …
+```
 Solution:
 ```
 $ rospack find usb_cam
@@ -459,15 +462,16 @@ $ cd holobot_ros/launch
 $ cat track_robot.launch
 ```
 Error: 
+```
 cannot launch node of type [usb_cam/usb_cam_node]: usb_cam
+```
 Based on [issues of vision_visp](https://github.com/lagadic/vision_visp/issues/42)
 Guidelines
 Read: readme (git status, git checkout kinetic or master)
 Read: cat cmake.txt! (distribution!!)
 Errors:
 Couldn’t install from the source. So, it can be just updated and then be installed based on the website.
-For workspace existed on nuc (catkin
-_ws) instead of 
+For workspace existed on nuc (catkin_ws) instead of 
 ```
 $ catkin_make --pkg “” catkin build “”
 ```
