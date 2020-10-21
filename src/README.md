@@ -460,7 +460,7 @@ $ cat track_robot.launch
 ```
 Error: 
 cannot launch node of type [usb_cam/usb_cam_node]: usb_cam
-https://github.com/lagadic/vision_visp/issues/42
+Based on [issues of vision_visp](https://github.com/lagadic/vision_visp/issues/42)
 Guidelines
 Read: readme (git status, git checkout kinetic or master)
 Read: cat cmake.txt! (distribution!!)
