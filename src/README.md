@@ -25,25 +25,33 @@ $ Sudo bash
 ```
 Notes for ROS Nav-STACK Running
 Turn on powerbot and nuc and connect to wifi and ssh
+```
 $ ping nuc
  //check nuc can be ping to the computer!
 $ ssh username@IP Address -X 
  //”ssh username@IP Address -X” to connect to nuc computer through our computer
-
+```
 1. Connect Joystick
+```
 $ sudo bash
 $ rosrun ps3joy ps3joy.py --continuous-output
+```
 2. launch
 New tab
+```
 $ ssh username@IP Address -X
 $ roslaunch powerbot_nav powerbot_nav.launch 
  //powerbot package & powerbot launch file
+```
 3. Rviz
 New tab
+```
 $ ssh username@IP Address -X
 $ username@IP Address:~$ roscd powerboat_nav/rviz/
-Note: Wight is the current map in up stair map. Black is the previous in caris map
+```
+Note: Wight is the current map in up stair map. Black is the previous in lab map
 change branch: 
+```
 $ username@IP Address: ~/ws/src/powerboat_nav/rviz$ git status 
  //which branch
 $ username@IP Address: ~/ws/src/powerboat_nav/rviz$ git checkout -b Maryam 
@@ -57,14 +65,17 @@ username@IP Address: ~/catkin_ws/src/powerboat_nav/rviz$ git status
 username@IP Address: ~/catkin_ws/src/powerboat_nav/rviz$ git checkout
  //all branch
 username@IP Address: ~/catkin_ws/src/powerboat_nav/rviz$ rosrun rviz rviz -d powerbot_nav.rviz
+```
 In nuc, edit info in package (like map)
 information about “yaml”, configuration parameters, cmd_vel (is sent by multiplexer, another computer inside the powerboat instead of nuc, run the ROSARIA) which we can change:
 Note: Joysteak (10)>move_base (1): means priority with Joysteak.
+```
 $ rosed powerbot_nav powerbot_nav.launch
  //edit and see info (find info in part of map)
 $ :q 
  //for exit
-
+```
+```
 $ roscd powerboat_nav/maps
  //go to folder;
  // wrong: roscd catkin_ws/src/powerboat_nav/launch
@@ -72,7 +83,8 @@ ls //shows what is included in the folder:
    //like the map folder, 
    //icics_x_wing_F0.yaml (caris lab) or x209_20180926.yaml 
 $ roslaunch powerbot_nav powerbot_nav.launch map:= x209_20180926.yaml //error
-
+```
+```
 $ roscd powerboat_nav/launch
  // go to folder
 $ username@IP Address: ~/catkin_ws/src/powerboat_nav/launch$ vi powerbot_nav.launch
@@ -87,36 +99,40 @@ $ username@IP Address: ~/catkin_ws/src/powerboat_nav/map$ git diff
  //red: the old change; green: the new one
 $ roslaunch powerbot_nav powerbot_nav.launch
  //then run the launch to see the new map
-
+```
 Note: There are 2 errors in red color when we run launch. Because we don’t use them. 1. Joystick, 2. Realsense
-
+```
 $ username@IP Address:~ rqt_graph
  //give node and topic connection.
-
+```
 Topic= connection between nodes. 
 Nodes= line program. 
 Massages are included in the topic.
 
  
-Turtlebot
+## Turtlebot
 1.	Go to simulation_ws/src or catkin_ws/src
 2.	“git clone “web””
 3.	Simulation  launch file  turtle_gazebo package  main.launch
 4.	After running the launch file
+```
 $ Rostopic list 
 $ Rostopic info /cmd_vel
  // Rostopic info /topic
 $ Rostopic pub /cmd_vel geometry_msgs/twist “tab”
  // Rostopic publish /topic TypeOfMessage “tab”
+```
 To see the topic, first, we have to roslaunch the package.
- 
+
 Person_follower
 See the code (Nodes)
+```
 $ roscd person_follower/
 $ :~/catkin_ws/src/person_follower$ ls
  //person_follower_controller.py
 $ :~/catkin_ws/src/person_follower/nodes$ gedit person_follower_controller.py
 $ :~/catkin_ws/src/person_follower/nodes$ cd
+```
 For see in home, we must email Wesly about “person_follower” and “people_follower”
 
  
@@ -125,25 +141,32 @@ work with OpenCV
 1. detect the ball
 1. rostopic list
 There are 3 command
+```
 /mira/pitch_joint_position_controller/command
 /mira/roll_joint_position_controller/command
 /mira/yaw_joint_position_controller/command
+```
 2. move the ball
+```
 Roslaunch package launch.file
 roslaunch blob_tracking move_ball_keyboard.lauch
- 
+```
 3. What mira camera see
 Rviz or rosrun
+```
 rosrun rqt_image_view rqt_image_view
+```
 camera topic info  open graphical interface
 in simulation  select image_raw to see the position of ball
    
 4. object tracking with OpenCV & python, color encoding
+```
 roslaunch blob_tracking start_colour_gui.launch
-
+```
  
 Holobot_ros package
 Camera
+```
 $ /catkin_ws/src/holobot_ros$ ls
  //… src launch
 $ /catkin_ws/src/holobot_ros$ cd launch
@@ -170,11 +193,13 @@ $ sudo apt-get install ros-kinetic-ar-track-alvar
  //orange error: camera calibration not found
  //Next Step:
  //install camera calibration package & use calibration board
-
+```
 Hardware (video in launch file-I must change: video1, video 2, video3)
+```
 $ ls /dev
-
+```
 myo running (creating node)
+```
 $ roscd (name of package)
 $ roscd myo_gesture_controller/
 $ :~/catkin_ws/src/myo_gesture_controller$ cd script
@@ -195,22 +220,31 @@ $ :~/catkin_ws/src/myo_gesture_controller/script$ rosrun myo_gesture_controller 
 $ :~/catkin_ws/src/myo_gesture_controller/script$ rosrun myo_gesture_controller stand_still.sh
     //publishing and latching massage. Press ctrl-C to terminate
 $ :~/catkin_ws/src/myo_gesture_controller/script$ cd
-
+```
  
 scp and errors
 To copy a file from B to A while logged into B:
+```
 $ scp /path/to/file username@a:/path/to/destination
+```
 To copy a file from B to A while logged into A:
+```
 $ scp username@b:/path/to/file /path/to/destination
+```
+```
 error:
-nuc@nuc: from nuc to caris: connection refused
+username@IP Address: from nuc to lab: connection refused
+```
 So try from username@IP Address to username@IP Address
+```
 error:
 no regular file
 $ scp -r root@IP:/path/to/file /path/to/filedestination
+```
+```
 right solution:
 $ username@IP Address:~$ scp -r /home/caris/catkin_ws/src/vision_visp username@IP Address:/home/nuc/catkin_ws/src
-
+```
  
 Internet Connection Problem in UBC 
 192.168.0.1
@@ -219,32 +253,42 @@ OR
 
 Joystick
 It works without below command
+
+```
 $ Sudo bash
+```
 If powerbot_nav is not running or any package, joystick doesn’t work.
 First run package which is included joystick package
 ROSTopic
 If no package is not running, there is no topic to show. So, run package.
+```
 $ Rostopic list | grep (what we want to search) 
 $ Rostopic list | grep rgb
+```
 .
 .
 Error: Unable to connect with master
 For “master error” in “rostopic”, 
+```
 $ Echo $ROS_MASTER_URI
-http://localhost:11311
+http://localhost:...
 $ ping lacalhost
+```
 Lasor Error
 The laser button near to on and off button of powerbot. We should turn it on. 
 Package Error
 1. mistype the (name of node), like: start_powerbot_person_follower_controller.sho instead of start_powerbot_person_follower_controller.sh
+```
 $ Rosrun (name of package: myo_...) (name of node: Start_...)
 .
 .
 .
+```
 Error: Failed to connect to Mir: Failed to connect to server socket:
        Unable to init server
        Failed to parse argument
 2. For “master error” in “rostopic”, 
+```
 $ Rosrun (name of package: myo_...) (name of node: Start_...)
 .
 .
@@ -253,6 +297,7 @@ Solution:
 $ Echo $ROS_MASTER_URI
 http://localhost:......
 $ ping localhost
+```
 Another package:
 3. restart it again. Sometimes it is because of connection to master ros.
  Open new terminal
