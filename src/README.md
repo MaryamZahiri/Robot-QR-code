@@ -68,7 +68,9 @@ username@IP Address: ~/catkin_ws/src/powerboat_nav/rviz$ rosrun rviz rviz -d pow
 ```
 In nuc, edit info in package (like map)
 information about ```“yaml”```, configuration parameters, ```cmd_vel``` (is sent by multiplexer, another computer inside the powerboat instead of nuc, run the ROSARIA) which we can change:
-<>Note: Joysteak ```(10)>move_base (1):``` means priority with Joysteak.</>
+```
+Note: Joysteak ```(10)>move_base (1):``` means priority with Joysteak.
+```
 ```
 $ rosed powerbot_nav powerbot_nav.launch
  //edit and see info (find info in part of map)
