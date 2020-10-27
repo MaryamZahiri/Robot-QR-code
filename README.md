@@ -1,6 +1,9 @@
 # Robot-QR-code
 Development of Human-tracking Robot using the QR Code recognition in Linux environment. As a result, Robot detects the QR code and follow it. (ROS-based processes)
 
+A human-tracking Robot using the QR code detection for mobile robot localization and navigation is proposed. With a camera and a quick recognition algorithm, the vision system used in the experiment provides a high-accurate and high-speed recognition method for detecting a leader marked with a QR code by a mobile Robot.
+The algorithm detects the location of the leader with the probable recognition of matrix codes in an image. Moreover, a Robot-control part is proposed to keep a determined distance from the leader being tracked.
+
 # Powerbot
 A mobile robot that was used in this package. 
 
