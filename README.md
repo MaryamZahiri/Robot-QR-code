@@ -23,7 +23,7 @@ This is an example of a valid QR-code pattern that can be downloaded from [ROS W
   ### Installation
 
   Install the dependencies for visp_auto_tracker if it isn't installed.
-
+```
   $ cd ~/catkin_ws/src
 
   $ git clone https://github.com/lagadic/vision_visp.git
@@ -31,13 +31,13 @@ This is an example of a valid QR-code pattern that can be downloaded from [ROS W
   $ cd ..
 
   $ catkin_make --pkg visp_auto_tracker 
-
+```
   Or
-
+```
   $ catkin build --pkg visp_auto_tracker
 
   $ source devel/setup.bash
-
+```
 # Terminal 1: PS3 Controller
 
 - Connect to NUC/computer with GUI: "ssh -X {user}@{host}". (Password needed)
